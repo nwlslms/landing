@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProdukKita — Solusi Sederhana, Hasil Maksimal</title>
+  <meta name="description" content="Landing page sederhana untuk menampilkan nilai produk, fitur utama, dan ajakan bertindak." />
+  <style>
+    :root{
+      --bg: #0f172a;        /* slate-900 */
+      --fg: #e2e8f0;        /* slate-200 */
+      --muted: #94a3b8;     /* slate-400 */
+      --brand: #22c55e;     /* green-500 */
+      --brand-dark: #16a34a;/* green-600 */
+      --card: #111827;      /* gray-900 */
+      --border: #1f2937;    /* gray-800 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+
+    /* Navbar */
+    .nav{
+      position:sticky; top:0; z-index:10;
+      background:rgba(15,23,42,0.7); backdrop-filter:blur(6px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:0.2px}
+    .brand-logo{
+      width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--brand), #06b6d4);
+    }
+    .nav-links{display:flex; gap:18px}
+    .nav-links a{padding:8px 10px; border-radius:6px}
+    .nav-links a:hover{background:#0b1223}
+
+    /* Hero */
+    .hero{padding:80px 0 40px; text-align:center}
+    .eyebrow{color:var(--muted); font-size:14px; letter-spacing:0.4px; text-transform:uppercase}
+    .title{font-size:40px; line-height:1.15; margin:12px 0}
+    .subtitle{color:var(--muted); font-size:18px; max-width:720px; margin:0 auto}
+    .cta{margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{
+      padding:12px 18px; border-radius:10px; border:1px solid var(--border);
+      background:var(--card); color:var(--fg); font-weight:600; cursor:pointer;
+    }
+    .btn-primary{background:var(--brand); border-color:transparent; color:#052e1a}
+    .btn-primary:hover{background:var(--brand-dark); color:#031f12}
+    .note{font-size:13px; color:var(--muted); margin-top:10px}
+
+    /* Sections */
+    section{padding:50px 0; border-top:1px solid var(--border)}
+    .grid{display:grid; gap:18px}
+    .card{
+      background:linear-gradient(180deg, #0b1323, #0a1221);
+      border:1px solid var(--border); border-radius:14px; padding:18px;
+    }
+    .card h3{margin:6px 0 8px; font-size:18px}
+    .card p{color:var(--muted); margin:0}
+
+    /* Features */
+    .features .grid{grid-template-columns:repeat(3, 1fr)}
+    .feature-icon{
+      width:36px; height:36px; border-radius:8px; background:#0f1a33; border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--brand);
+      margin-bottom:8px;
+    }
+
+    /* Testimonials */
+    .testi .grid{grid-template-columns:repeat(3, 1fr)}
+    .quote{font-style:italic}
+    .author{margin-top:10px; color:var(--muted); font-size:14px}
+
+    /* CTA block */
+    .cta-block{
+      text-align:center;
+      background:radial-gradient(1200px 400px at 50% -200px, rgba(34,197,94,0.15), transparent 60%);
+      padding:40px 20px; border-radius:16px;
+    }
+
+    /* Footer */
+    footer{padding:30px 0; border-top:1px solid var(--border); color:var(--muted); font-size:14px}
+    .footer-inner{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .features .grid, .testi .grid{grid-template-columns:1fr 1fr}
+      .title{font-size:34px}
+    }
+    @media (max-width: 600px){
+      .features .grid, .testi .grid{grid-template-columns:1fr}
+      .title{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span>ProdukKita</span>
+      </div>
+      <div class="nav-links" role="navigation" aria-label="Navigasi utama">
+        <a href="#fitur">Fitur</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#harga">Harga</a>
+        <a href="#gabung" class="btn btn-primary">Coba Gratis</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero container">
+    <div class="eyebrow">Solusi ringan, hasil nyata</div>
+    <h1 class="title">Tunjukkan nilai produk dengan landing page yang bersih dan fokus</h1>
+    <p class="subtitle">Sampaikan manfaat utama, bangun kepercayaan, dan arahkan pengunjung pada satu ajakan bertindak. Template ini siap dipakai dan mudah disesuaikan.</p>
+    <div class="cta">
+      <a href="#gabung" class="btn btn-primary">Mulai Sekarang</a>
+      <a href="#fitur" class="btn">Lihat Fitur</a>
+    </div>
+    <div class="note">Tidak perlu framework—HTML + CSS murni, cepat di-load.</div>
+  </header>
+
+  <main>
+    <!-- FEATURES -->
+    <section id="fitur" class="features">
+      <div class="container">
+        <h2>Fitur utama</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="feature-icon">A</div>
+            <h3>Desain jelas</h3>
+            <p>Tipografi nyaman dibaca dengan kontras yang baik, fokus pada konten inti.</p>
+          </article>
+          <article class="card">
+            <div class="feature-icon">B</div>
+            <h3>Responsif</h3>
+            <p>Grid sederhana yang menyesuaikan tampilan di desktop, tablet, dan ponsel.</p>
+          </article>
+          <article class="card">
+            <div class="feature-icon">C</div>
+            <h3>Mudah dikembangkan</h3>
+            <p>Struktur modular: setiap bagian terpisah sehingga gampang diubah atau ditambah.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimoni" class="testi">
+      <div class="container">
+        <h2>Bukti sosial</h2>
+        <div class="grid">
+          <article class="card">
+            <p class="quote">“Konversi naik 30% setelah pakai template ini.”</p>
+            <div class="author">— Rina, UMKM Kuliner</div>
+          </article>
+          <article class="card">
+            <p class="quote">“Cepat dibangun, mudah dipahami tim.”</p>
+            <div class="author">— Bayu, Frontend Dev</div>
+          </article>
+          <article class="card">
+            <p class="quote">“Loading ringan, tampilan profesional.”</p>
+            <div class="author">— Sari, Konsultan Produk</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMPLE PRICING PREVIEW -->
+    <section id="harga">
+      <div class="container">
+        <h2>Harga singkat</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Gratis</h3>
+            <p>Cocok untuk uji coba. Termasuk semua komponen dasar.</p>
+          </article>
+          <article class="card">
+            <h3>Pro</h3>
+            <p>Tambahan komponen, warna, dan dukungan CSS utility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BLOCK -->
+    <section id="gabung">
+      <div class="container cta-block">
+        <h2>Siap memulai?</h2>
+        <p class="subtitle">Buat kesan pertama yang kuat. Tambahkan konten Anda, dan terbitkan hari ini.</p>
+        <div class="cta">
+          <a href="#" class="btn btn-primary">Coba Gratis</a>
+          <a href="#" class="btn">Hubungi Kami</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 ProdukKita</div>
+      <div><a href="#">Kebijakan Privasi</a> • <a href="#">Syarat Layanan</a></div>
+    </div>
+  </footer>
+</body>
+</html>
